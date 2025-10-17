@@ -1,13 +1,13 @@
 # README for Username Validation Script
 
 ## Author Information
-- **Name:** [Your Full Name]
-- **Course:** [Course Number and Name]
-- **Assignment:** Username Validation
-- **Date:** [Date of Completion]
+- Avery Williams
+- CENG298 - Computer Science Colloquium
+- HW 7: username.sh
+- October 16, 2025
 
 ## Program Description
-[Write 2-3 sentences in your own words describing what this script does and its purpose. Explain the problem it solves and how it works at a high level.]
+The program's purpose is to validate a username written in the username-input text file
 
 ## Username Requirements
 This script validates usernames according to the following rules:
@@ -32,6 +32,7 @@ To test with the provided input file:
 - The `grep` command with extended regular expressions
 - The meaning of the `-E` and `-v` flags
 - The redirect `> /dev/null 2>&1`
+The program first prints the instructions, then starts the while loop to read each line in the text file. The grep command with -E and -v deals with extended regular expresions like "{2,11}" and creates an invalid response respectively. >/dev/null 2>&1 moves any wrong usernames to the trash and doesn't show the error, so the whole thing looks cleaner.
 
 ## Regular Expression Pattern
 The validation uses the following regular expression pattern:
@@ -46,14 +47,23 @@ This pattern ensures that:
 ## Testing Results
 [Describe your testing process and results. Include:]
 - Example valid usernames you tested (at least two)
+    - dev_user, admin
 - Example invalid usernames and why they fail (at least two)
+    - ab: too little characters, test-user: invalid character "-"
 - How you used the username-input file to test
+    using command "./username.sh < username-input" makes each line in the file variables.
 
 ## Challenges and Solutions
-[Optional: Describe any challenges you encountered while creating this script and how you solved them. This could include debugging issues, understanding regular expressions, or Git workflow problems.]
+I had trouble understanding some of the steps to properly clone my repository, but Prof. Miller helped when I went to her office hours
+I don't know how to make it read all the names in the text file so I used the IFS command
+I can't get the program to act on its own with it interactively and listing the text file so I have 2 bash files: 
+- username.sh 
+- usernameinterative.sh
 
 ## Resources
-[List any resources you used (class slides, ChatGPT, etc.). Please refer to the course syllabus for more details on citations.]
+- Class Slides (Week 7 + 8)
+- Prof. Miller's Office Hours (10/16/25)
+- https://www.baeldung.com/linux/ifs-shell-variable for the use of IFS in the code
 
 ## License
 This project is part of coursework for Chapman University and is intended for educational purposes.
