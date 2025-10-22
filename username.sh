@@ -9,7 +9,7 @@ echo "It has to start with a lowercase letter"
 echo "The rest can be lowercase, uppercase, numbers, or an underscore"
 
 while true; do
-    read -r "Type in a username: " user_name
+    read -r -p "Type in a username: " user_name
     if [[ $user_name =~ ^[a-z][a-zA-Z0-9_]{2,11}$ ]]; then
         echo "Your username is '$user_name'"
         break
